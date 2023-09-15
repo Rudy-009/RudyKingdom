@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomTextField: View {
+struct CutsomTextStyle: View {
     
     @State private var title: String = "Custom TextField"
     
@@ -31,6 +31,6 @@ struct RegisterTextStyle: TextFieldStyle {
 
 struct CustomTextField_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTextField()
+        CutsomTextStyle()
     }
 }

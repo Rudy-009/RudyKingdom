@@ -36,7 +36,7 @@ struct RegisterView: View {
                         .padding(.bottom, 10)
                     
                     TextField("비밀번호 재입력", text: $rePassword)
-//                        .textFieldStyle(RegisterTextField())
+                        .textFieldStyle(RegisterTextStyle())
                         .padding(.bottom, 20)
                     
                     CustomButton(buttonText: "회원가입", action: {})
