@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D99A4CA2AB55B4C00F41F4F /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D99A4C92AB55B4C00F41F4F /* WelcomeView.swift */; };
+		1D99A4CD2AB55B6200F41F4F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D99A4CC2AB55B6200F41F4F /* LoginView.swift */; };
 		2FA10F0A2AB42CD900E117B4 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA10F092AB42CD900E117B4 /* PostCell.swift */; };
 		3B1599B92AB42559000A6410 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1599B82AB42559000A6410 /* ChatRoom.swift */; };
 		3B1599BB2AB425D0000A6410 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1599BA2AB425D0000A6410 /* ChatBubble.swift */; };
@@ -45,6 +47,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D99A4C92AB55B4C00F41F4F /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		1D99A4CC2AB55B6200F41F4F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2FA10F092AB42CD900E117B4 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		3B1599B82AB42559000A6410 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = SOURCE_ROOT; };
 		3B1599BA2AB425D0000A6410 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = SOURCE_ROOT; };
@@ -96,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D99A4C82AB55B2D00F41F4F /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				1D99A4C92AB55B4C00F41F4F /* WelcomeView.swift */,
+				1D99A4CC2AB55B6200F41F4F /* LoginView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		2FA10F082AB42CAA00E117B4 /* SubView */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +162,7 @@
 			children = (
 				6308B4962AB4189E00CFEA4D /* BuyLikeLionApp.swift */,
 				6308B4982AB4189E00CFEA4D /* MainTabView.swift */,
+				1D99A4C82AB55B2D00F41F4F /* Authentication */,
 				96B5130C2AB451C5004D9FD1 /* Register */,
 				6308B4C22AB41C1000CFEA4D /* Post */,
 				96B512FC2AB423CC004D9FD1 /* EditVIew */,
@@ -363,6 +377,7 @@
 				6308B4BB2AB41B1900CFEA4D /* ChattingListView.swift in Sources */,
 				B0C9B9CF2AB4552D0044DAA5 /* CustomTextStyle.swift in Sources */,
 				B090087E2AB542E000A8DB01 /* RegisterViewModel.swift in Sources */,
+				1D99A4CA2AB55B4C00F41F4F /* WelcomeView.swift in Sources */,
 				B0C9B9C72AB431BB0044DAA5 /* CustomNavigationBackButton.swift in Sources */,
 				B0C9B9BF2AB425990044DAA5 /* RegisterView.swift in Sources */,
 				B0C9B9C52AB42F530044DAA5 /* CustomButton.swift in Sources */,
@@ -373,6 +388,7 @@
 				6308B4BD2AB41B8F00CFEA4D /* MainPostView.swift in Sources */,
 				DC4DBF0F2AB42BF600311F55 /* SearchView.swift in Sources */,
 				6308B4B92AB41B0100CFEA4D /* MyPageView.swift in Sources */,
+				1D99A4CD2AB55B6200F41F4F /* LoginView.swift in Sources */,
 				3B1599BB2AB425D0000A6410 /* ChatBubble.swift in Sources */,
 				2FA10F0A2AB42CD900E117B4 /* PostCell.swift in Sources */,
 			);
@@ -499,7 +515,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BuyLikeLion/Preview Content\"";
-				DEVELOPMENT_TEAM = 7Y6TYDQ939;
+				DEVELOPMENT_TEAM = 6R3M7VGRP2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -537,7 +553,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BuyLikeLion/Preview Content\"";
-				DEVELOPMENT_TEAM = 7Y6TYDQ939;
+				DEVELOPMENT_TEAM = 6R3M7VGRP2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

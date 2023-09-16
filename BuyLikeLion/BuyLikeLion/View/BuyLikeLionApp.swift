@@ -23,9 +23,10 @@ struct BuyLikeLionApp: App {
     
     @StateObject private var keyboardHeight = KeyboardHeightHelper()
     @StateObject var registerViewModel: RegisterViewModel = RegisterViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            RegisterView()
+            WelcomeView()
                 .environmentObject(keyboardHeight)
                 .environmentObject(registerViewModel)
         }
