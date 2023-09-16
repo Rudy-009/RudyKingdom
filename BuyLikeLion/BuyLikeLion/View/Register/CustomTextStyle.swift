@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CutsomTextStyle: View {
     
-    @State private var title: String = "Custom TextField"
+    @State private var title: String = "RegisterTextStyle"
     
     var body: some View {
         TextField("Register TextField", text: $title)
