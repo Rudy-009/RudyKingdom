@@ -33,10 +33,11 @@
 		96B513052AB43485004D9FD1 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B513042AB43485004D9FD1 /* MyTextField.swift */; };
 		96B513082AB43945004D9FD1 /* EditTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B513072AB43945004D9FD1 /* EditTextEditor.swift */; };
 		96B5130B2AB43F35004D9FD1 /* KeyBoardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B5130A2AB43F35004D9FD1 /* KeyBoardHelper.swift */; };
+		B090087C2AB5287800A8DB01 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B090087B2AB5287800A8DB01 /* GoogleService-Info.plist */; };
+		B090087E2AB542E000A8DB01 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B090087D2AB542E000A8DB01 /* RegisterViewModel.swift */; };
 		B0C9B9BF2AB425990044DAA5 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C9B9BE2AB425990044DAA5 /* RegisterView.swift */; };
 		B0C9B9C52AB42F530044DAA5 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C9B9C42AB42F530044DAA5 /* CustomButton.swift */; };
 		B0C9B9C72AB431BB0044DAA5 /* CustomNavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C9B9C62AB431BB0044DAA5 /* CustomNavigationBackButton.swift */; };
-		B0C9B9CD2AB453FD0044DAA5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0C9B9CC2AB453FD0044DAA5 /* GoogleService-Info.plist */; };
 		B0C9B9CF2AB4552D0044DAA5 /* CustomTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C9B9CE2AB4552D0044DAA5 /* CustomTextStyle.swift */; };
 		DC4DBF0F2AB42BF600311F55 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DBF0E2AB42BF600311F55 /* SearchView.swift */; };
 		DC4DBF112AB4300300311F55 /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DBF102AB4300300311F55 /* SearchResultView.swift */; };
@@ -65,10 +66,11 @@
 		96B513042AB43485004D9FD1 /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
 		96B513072AB43945004D9FD1 /* EditTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextEditor.swift; sourceTree = "<group>"; };
 		96B5130A2AB43F35004D9FD1 /* KeyBoardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardHelper.swift; sourceTree = "<group>"; };
+		B090087B2AB5287800A8DB01 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B090087D2AB542E000A8DB01 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		B0C9B9BE2AB425990044DAA5 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		B0C9B9C42AB42F530044DAA5 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		B0C9B9C62AB431BB0044DAA5 /* CustomNavigationBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBackButton.swift; sourceTree = "<group>"; };
-		B0C9B9CC2AB453FD0044DAA5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B0C9B9CE2AB4552D0044DAA5 /* CustomTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextStyle.swift; sourceTree = "<group>"; };
 		DC4DBF0E2AB42BF600311F55 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		DC4DBF102AB4300300311F55 /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
@@ -105,7 +107,7 @@
 		6308B48A2AB4189E00CFEA4D = {
 			isa = PBXGroup;
 			children = (
-				B0C9B9CC2AB453FD0044DAA5 /* GoogleService-Info.plist */,
+				B090087B2AB5287800A8DB01 /* GoogleService-Info.plist */,
 				6308B4952AB4189E00CFEA4D /* BuyLikeLion */,
 				6308B4942AB4189E00CFEA4D /* Products */,
 			);
@@ -241,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				B0C9B9BE2AB425990044DAA5 /* RegisterView.swift */,
+				B090087D2AB542E000A8DB01 /* RegisterViewModel.swift */,
 				B0C9B9C42AB42F530044DAA5 /* CustomButton.swift */,
 				B0C9B9C62AB431BB0044DAA5 /* CustomNavigationBackButton.swift */,
 				B0C9B9CE2AB4552D0044DAA5 /* CustomTextStyle.swift */,
@@ -330,7 +333,7 @@
 			files = (
 				6308B49F2AB4189F00CFEA4D /* Preview Assets.xcassets in Resources */,
 				6308B49B2AB4189F00CFEA4D /* Assets.xcassets in Resources */,
-				B0C9B9CD2AB453FD0044DAA5 /* GoogleService-Info.plist in Resources */,
+				B090087C2AB5287800A8DB01 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +362,7 @@
 				96B513022AB42F22004D9FD1 /* ImageAddView.swift in Sources */,
 				6308B4BB2AB41B1900CFEA4D /* ChattingListView.swift in Sources */,
 				B0C9B9CF2AB4552D0044DAA5 /* CustomTextStyle.swift in Sources */,
+				B090087E2AB542E000A8DB01 /* RegisterViewModel.swift in Sources */,
 				B0C9B9C72AB431BB0044DAA5 /* CustomNavigationBackButton.swift in Sources */,
 				B0C9B9BF2AB425990044DAA5 /* RegisterView.swift in Sources */,
 				B0C9B9C52AB42F530044DAA5 /* CustomButton.swift in Sources */,
@@ -495,7 +499,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BuyLikeLion/Preview Content\"";
-				DEVELOPMENT_TEAM = 2JZ8QNS5D4;
+				DEVELOPMENT_TEAM = 7Y6TYDQ939;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -533,7 +537,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BuyLikeLion/Preview Content\"";
-				DEVELOPMENT_TEAM = 2JZ8QNS5D4;
+				DEVELOPMENT_TEAM = 7Y6TYDQ939;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
