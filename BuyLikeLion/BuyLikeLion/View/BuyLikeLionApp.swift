@@ -26,7 +26,9 @@ struct BuyLikeLionApp: App {
     
     var body: some Scene {
         WindowGroup {
-            WelcomeView()
+//            WelcomeView()
+            // Firebase 회원가입 로직 구성까지 일단 임시조치.
+            MainTabView()
                 .environmentObject(keyboardHeight)
                 .environmentObject(registerViewModel)
         }
