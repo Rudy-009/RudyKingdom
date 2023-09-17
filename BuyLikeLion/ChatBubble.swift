@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ChatBubble: Identifiable, Codable {
+struct ChatBubble: Identifiable, Codable, Equatable {
     var id: String = UUID().uuidString
     var sender: String
     var content: String
@@ -21,7 +21,7 @@ struct ChatBubble: Identifiable, Codable {
         
         dateFormatter.locale = Locale(identifier: "ko_kr")
         dateFormatter.timeZone = TimeZone(abbreviation: "KST")
-        dateFormatter.dateFormat = "MM월 dd일 HH시 mm분"
+        dateFormatter.dateFormat = "MM월 dd일 HH시 mm분 ss초"
         
         return dateFormatter.string(from: dateCreatedAt)
     }

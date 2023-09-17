@@ -38,7 +38,6 @@ class TempChatbubbleStore: ObservableObject {
                     tempChats.sort{ $0.time < $1.time }
                 }
                 self.chats = tempChats
-                print(self.chats)
             }
         }
     }
