@@ -21,14 +21,19 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct BuyLikeLionApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var keyboardHeight = KeyboardHeightHelper()
+    @StateObject private var searchViewModel: SearchViewModel = SearchViewModel()
     @StateObject var registerViewModel: RegisterViewModel = RegisterViewModel()
     @StateObject var userAuth = UserAuth()
 
     var body: some Scene {
         WindowGroup {
+          
             if userAuth.isLogged {
-                MainPostView()
+                MainTabView()
                     .environmentObject(userAuth)
+                    .environmentObject(keyboardHeight)
+                    .environmentObject(searchViewModel)
+                    .environmentObject(registerViewModel)
             } else {
                 WelcomeView()
                     .environmentObject(userAuth)
