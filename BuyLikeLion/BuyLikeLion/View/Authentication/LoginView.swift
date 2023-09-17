@@ -26,6 +26,7 @@ struct LoginView: View {
     
     // 이전 화면으로 돌아가기
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject var userAuth: UserAuth
     
     var body: some View {
         NavigationStack {
@@ -129,11 +130,12 @@ struct LoginView: View {
                 return
             }
             // 로그인 성공
+            userAuth.isLogged = true  // UserAuth 객체의 isLogged를 true로 설정
             errorMessage = ""
             isShowingLoginAlert = true
         }
     }
-    
+
     // 이메일 유효성 검사
     func isCheckEmail() {
         if isValidEmail(email) {
