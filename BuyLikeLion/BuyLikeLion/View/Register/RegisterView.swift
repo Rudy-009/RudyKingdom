@@ -107,6 +107,7 @@ struct RegisterView: View {
                         }
                 }
             }
+            .modifier(CustomNavigationBackButton()) 
             .onChange(of: email) { newValue in
                 registerViewModel.checkEmailAvailability(email: newValue)
             }
