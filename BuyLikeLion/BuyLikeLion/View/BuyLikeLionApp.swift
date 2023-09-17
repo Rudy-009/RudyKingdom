@@ -22,12 +22,14 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct BuyLikeLionApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
-    
     @StateObject private var keyboardHeight = KeyboardHeightHelper()
+    @StateObject private var searchViewModel: SearchViewModel = SearchViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            RegisterView()
+            MainTabView()
                 .environmentObject(keyboardHeight)
+                .environmentObject(searchViewModel)
         }
     }
 }
