@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct SearchView: View {
-    @StateObject var searchViewModel: SearchViewModel = SearchViewModel()
+    @EnvironmentObject var searchViewModel: SearchViewModel
+    let trie: Trie = Trie(root: TrieNode(value: ""))
     
     @State private var searchText: String = ""
+    @State private var trimmedSearchText: String = ""
     @State private var isSearchTextEmpty: Bool = true
     
     var body: some View {
         VStack {
             searchTextField
-            recentSearchWord
+            recentSearchText
+            recentSearchHistory
             
             Spacer()
         }
@@ -28,22 +31,35 @@ struct SearchView: View {
     var searchTextField: some View {
         VStack {
             HStack {
-                TextField("검색어를 입력하세요...", text: $searchText)
+                TextField("책이나 저자, 출판사로 검색해보세요...", text: $searchText)
+                    .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
                     .onChange(of: searchText) { newValue in
-                        if searchText.isEmpty {
+                        trimmedSearchText = searchText.trimmingCharacters(in: .whitespaces)
+                        if trimmedSearchText.isEmpty {
                             isSearchTextEmpty = true
                         } else {
                             isSearchTextEmpty = false
                         }
                     }
                 
+                if !searchText.isEmpty {
+                    Button {
+                        searchText = ""
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .foregroundColor(.gray)
+                    }
+                    .padding(.trailing, 5)
+                }
+                
                 NavigationLink {
-                    SearchResultView(searchText: searchText)
+                    SearchResultView(searchText: trimmedSearchText)
                 } label: {
                     Image(systemName: "magnifyingglass")
                         .foregroundColor(.primary)
                 }
-//                .disabled(isSearchTextEmpty)
+                .disabled(isSearchTextEmpty)
             }
             .padding(.horizontal)
             .padding(.vertical, 12)
@@ -55,26 +71,49 @@ struct SearchView: View {
         .padding(.bottom, 30)
     }
     
-    var recentSearchWord: some View {
+    var recentSearchText: some View {
         VStack(alignment: .leading) {
-            Text("최근 검색어")
-                .font(.title3.bold())
-            
+            HStack(alignment: .center) {
+                Text("최근 검색어")
+                    .fontWeight(.bold)
+                
+                Spacer()
+                
+                if !searchViewModel.recentSearchHistories.isEmpty {
+                    Button {
+                        searchViewModel.removeAllRecentSearchHistories()
+                    } label: {
+                        Text("모두 지우기")
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                    }
+                }
+            }
+        }
+    }
+    
+    var recentSearchHistory: some View {
+        VStack(alignment: .leading) {
             Divider()
                 .padding(.bottom)
             
-            if searchViewModel.recentSearchWords.isEmpty {
+            if searchViewModel.recentSearchHistories.isEmpty {
                 Text("최근 검색한 키워드가 없습니다.")
                     .foregroundColor(.gray)
             } else {
-                ForEach(searchViewModel.recentSearchWords, id: \.self) { word in
+                ForEach(searchViewModel.recentSearchHistories, id: \.self) { historyText in
                     HStack {
-                        Text(word)
+                        NavigationLink {
+                            SearchResultView(searchText: historyText)
+                        } label: {
+                            Text(historyText)
+                                .foregroundColor(.primary)
+                        }
                         
                         Spacer()
                         
                         Button {
-                            // action ...
+                            searchViewModel.removeRecentSearchHistory(historyText)
                         } label: {
                             Image(systemName: "xmark")
                                 .foregroundColor(.primary)

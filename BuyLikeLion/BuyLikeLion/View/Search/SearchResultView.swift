@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct SearchResultView: View {
-    @State var searchText: String
-    
-    @StateObject var searchViewModel: SearchViewModel = SearchViewModel()
+    var searchText: String
+    @EnvironmentObject var searchViewModel: SearchViewModel
     
     var body: some View {
         VStack {
@@ -23,48 +22,55 @@ struct SearchResultView: View {
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             searchViewModel.searchPost(searchText)
+            searchViewModel.addRecentSearchHistory(searchText)
         }
     }
     
     var searchResultPost: some View {
         ScrollView {
-            ForEach(searchViewModel.searchResultPosts, id: \.bookName) { post in
-                NavigationLink {
-//                    PostDetailView()
-                } label: {
-                    VStack(alignment: .leading) {
-                        HStack(alignment: .top, spacing: 12) {
-                            RoundedRectangle(cornerRadius: 4) // image
-                                .frame(width: 100, height: 100)
-                            
-                            VStack(alignment: .leading) {
+            if searchViewModel.searchResultPosts.isEmpty {
+                Text("검색 결과가 없습니다.")
+                    .foregroundColor(.gray)
+                    .padding(.top)
+            } else {
+                ForEach(searchViewModel.searchResultPosts, id: \.bookName) { post in
+                    NavigationLink {
+                        //                    PostDetailView()
+                    } label: {
+                        VStack(alignment: .leading) {
+                            HStack(alignment: .top, spacing: 12) {
+                                RoundedRectangle(cornerRadius: 4) // image
+                                    .frame(width: 100, height: 100)
+                                
                                 VStack(alignment: .leading) {
-                                    Text(post.bookName)
-                                        .font(.title3.bold())
-                                        .lineLimit(2)
-                                        .multilineTextAlignment(.leading)
-                                    Text("\(post.bookPublisher) | \(post.bookAuthor)")
-                                        .font(.system(size: 14))
-                                        .foregroundColor(.gray)
-                                        .lineLimit(1)
-                                }
-                                
-                                Spacer()
-                                
-                                HStack {
+                                    VStack(alignment: .leading) {
+                                        Text(post.bookName)
+                                            .font(.title3.bold())
+                                            .lineLimit(2)
+                                            .multilineTextAlignment(.leading)
+                                        Text("\(post.bookPublisher) | \(post.bookAuthor)")
+                                            .font(.system(size: 14))
+                                            .foregroundColor(.gray)
+                                            .lineLimit(1)
+                                    }
+                                    
                                     Spacer()
-                                    Text("\(post.price)원")
-                                        .font(.title3.bold())
+                                    
+                                    HStack {
+                                        Spacer()
+                                        Text("\(post.price)원")
+                                            .font(.title3.bold())
+                                    }
                                 }
                             }
                         }
-                    }
-                    .foregroundColor(.primary)
-                    .padding(.horizontal)
-                    .padding(.vertical, 12)
-                    .background {
-                        RoundedRectangle(cornerRadius: 4)
-                            .fill(.gray.opacity(0.2))
+                        .foregroundColor(.primary)
+                        .padding(.horizontal)
+                        .padding(.vertical, 12)
+                        .background {
+                            RoundedRectangle(cornerRadius: 4)
+                                .fill(.gray.opacity(0.2))
+                        }
                     }
                 }
             }

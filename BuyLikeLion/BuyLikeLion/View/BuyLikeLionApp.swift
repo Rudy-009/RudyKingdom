@@ -22,14 +22,16 @@ struct BuyLikeLionApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     @StateObject private var keyboardHeight = KeyboardHeightHelper()
+    @StateObject private var searchViewModel: SearchViewModel = SearchViewModel()
     @StateObject var registerViewModel: RegisterViewModel = RegisterViewModel()
     
     var body: some Scene {
         WindowGroup {
-//            WelcomeView()
-            // Firebase 회원가입 로직 구성까지 일단 임시조치.
             MainTabView()
+            // WelcomeView()
+            // Firebase 회원가입 로직 구성까지 일단 임시조치.
                 .environmentObject(keyboardHeight)
+                .environmentObject(searchViewModel)
                 .environmentObject(registerViewModel)
         }
     }
