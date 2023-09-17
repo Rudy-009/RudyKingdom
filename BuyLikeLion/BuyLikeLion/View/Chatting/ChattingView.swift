@@ -37,8 +37,7 @@ struct ChattingView: View {
             .padding(.leading)
             .padding(.trailing)
             HStack {
-                Group{
-                    // MARK: 게시물 1번 사진
+                Group{ // MARK: 게시물 1번 사진
                     AsyncImage( url: URL(string :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREfiutHaA2w55P0u2VqE6Qt1YE_uJ6irBZbA&usqp=CAU")){ image in
                         image
                             .resizable()
@@ -60,25 +59,27 @@ struct ChattingView: View {
                 Spacer()
             }
             .background(Color(.lightGray))
-            ScrollView {
+            ScrollView { // MARK: 채팅스크롤 뷰
                 ForEach(temp.chats) { chat in
                     HStack {
-                        if chat.sender == "Me" {
+                        if chat.sender == "Me" { //현재 계정과 비교해야 함
                             Spacer()
                         }
                         ChattingBubbleView(isCurrentUser: chat.sender == "Me", chat: chat)
                             .padding(.leading, 15)
                             .padding(.trailing, 15)
-                        if chat.sender != "Me" {
+                        if chat.sender != "Me" { //현재 계정과 비교해야 함
                             Spacer()
                         }
-                        
                     }
                 }
                 .listStyle(.plain)
             }
+            .refreshable {
+                temp.fetchChatting()
+            }
             HStack{
-                // MARK: +
+                // MARK: Plus
                 Button {
                     
                 } label: {
@@ -112,6 +113,9 @@ struct ChattingView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
+        .onAppear{
+            temp.fetchChatting()
+        }
     }
 }
 

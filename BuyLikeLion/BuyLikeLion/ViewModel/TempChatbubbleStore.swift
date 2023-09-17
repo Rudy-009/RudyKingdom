@@ -6,22 +6,53 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 class TempChatbubbleStore: ObservableObject {
     
-    var chats: [ChatBubble] = [
-        ChatBubble(sender: "Me", content: "팔렸나요?", time: "1"),
-        ChatBubble(sender: "Not", content: "아니요", time: "2"),
-        ChatBubble(sender: "Me", content: "파실 건가요?", time: "3"),
-        ChatBubble(sender: "Not", content: "네", time: "4"),
-        ChatBubble(sender: "Me", content: "3000원만 좀...", time: "5"),
-        ChatBubble(sender: "Not", content: "네?", time: "6"),
-        ChatBubble(sender: "Me", content: "아니에요", time: "7"),
-    ]
+    let dbRef = Firestore.firestore().collection("TempChattingRoom")
+    
+    var chats: [ChatBubble] = []
+    
+    func fetchChatting() {
+        dbRef.getDocuments{ (snapshot, error) in
+            self.chats.removeAll()
+            
+            if let snapshot {
+                var tempChats: [ChatBubble] = []
+                
+                for document in snapshot.documents {
+                    let id: String = document.documentID
+                    
+                    let docData: [String: Any] = document.data()
+                    //let username: String = docData
+                    
+                    let sender: String = docData["sender"] as? String ?? ""
+                    let content: String = docData["content"] as? String ?? ""
+                    let time: String = docData["time"] as? String ??
+                    "0.0"
+                    
+                    let chat = ChatBubble(id: id, sender: sender, content: content, time: time)
+                    
+                    tempChats.append(chat)
+                    tempChats.sort{ $0.time < $1.time }
+                }
+                self.chats = tempChats
+                print(self.chats)
+            }
+        }
+    }
     
     func addChatBubble(content: String) {
-        let new = ChatBubble(sender: "Me", content: content, time: "?")
-        chats.append(new)
+        var new = ChatBubble(sender: "Me", content: content, time: "0.0")
+        new.time = new.now
+        dbRef.document(new.id)
+            .setData([
+                "sender": new.sender,
+                "content": new.content,
+                "time": new.now
+            ])
+        fetchChatting()
     }
     
 }

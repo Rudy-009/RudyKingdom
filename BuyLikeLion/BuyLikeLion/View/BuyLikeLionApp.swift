@@ -26,7 +26,7 @@ struct BuyLikeLionApp: App {
     @StateObject private var keyboardHeight = KeyboardHeightHelper()
     var body: some Scene {
         WindowGroup {
-            RegisterView()
+            ChattingView()
                 .environmentObject(keyboardHeight)
         }
     }
