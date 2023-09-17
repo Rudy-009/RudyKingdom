@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SearchView: View {
     @EnvironmentObject var searchViewModel: SearchViewModel
-//    let trie: Trie = Trie(root: TrieNode(value: ""))
     
     @State private var searchText: String = ""
     @State private var trimmedSearchText: String = ""
