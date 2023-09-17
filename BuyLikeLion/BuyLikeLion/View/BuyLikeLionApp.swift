@@ -20,19 +20,26 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct BuyLikeLionApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    
     @StateObject private var keyboardHeight = KeyboardHeightHelper()
     @StateObject private var searchViewModel: SearchViewModel = SearchViewModel()
     @StateObject var registerViewModel: RegisterViewModel = RegisterViewModel()
-    
+    @StateObject var userAuth = UserAuth()
+
     var body: some Scene {
         WindowGroup {
-            MainTabView()
-            // WelcomeView()
-            // Firebase 회원가입 로직 구성까지 일단 임시조치.
-                .environmentObject(keyboardHeight)
-                .environmentObject(searchViewModel)
-                .environmentObject(registerViewModel)
+          
+            if userAuth.isLogged {
+                MainTabView()
+                    .environmentObject(userAuth)
+                    .environmentObject(keyboardHeight)
+                    .environmentObject(searchViewModel)
+                    .environmentObject(registerViewModel)
+            } else {
+                WelcomeView()
+                    .environmentObject(userAuth)
+                    .environmentObject(registerViewModel)
+            }
         }
     }
 }
+
