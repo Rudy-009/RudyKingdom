@@ -35,6 +35,9 @@
 		96B513052AB43485004D9FD1 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B513042AB43485004D9FD1 /* MyTextField.swift */; };
 		96B513082AB43945004D9FD1 /* EditTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B513072AB43945004D9FD1 /* EditTextEditor.swift */; };
 		96B5130B2AB43F35004D9FD1 /* KeyBoardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B5130A2AB43F35004D9FD1 /* KeyBoardHelper.swift */; };
+		96FB2F812AB77883000F8ABE /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB2F802AB77883000F8ABE /* FirebaseService.swift */; };
+		96FB2F832AB77893000F8ABE /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB2F822AB77893000F8ABE /* Util.swift */; };
+		96FB2F852AB7789A000F8ABE /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB2F842AB7789A000F8ABE /* API.swift */; };
 		B090087C2AB5287800A8DB01 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B090087B2AB5287800A8DB01 /* GoogleService-Info.plist */; };
 		B090087E2AB542E000A8DB01 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B090087D2AB542E000A8DB01 /* RegisterViewModel.swift */; };
 		B0C9B9CF2AB4552D0044DAA5 /* CustomTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C9B9CE2AB4552D0044DAA5 /* CustomTextStyle.swift */; };
@@ -78,6 +81,9 @@
 		96B513042AB43485004D9FD1 /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
 		96B513072AB43945004D9FD1 /* EditTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextEditor.swift; sourceTree = "<group>"; };
 		96B5130A2AB43F35004D9FD1 /* KeyBoardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardHelper.swift; sourceTree = "<group>"; };
+		96FB2F802AB77883000F8ABE /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		96FB2F822AB77893000F8ABE /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		96FB2F842AB7789A000F8ABE /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		B090087B2AB5287800A8DB01 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B090087D2AB542E000A8DB01 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		B0C9B9BE2AB425990044DAA5 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -150,6 +156,7 @@
 		6308B4952AB4189E00CFEA4D /* BuyLikeLion */ = {
 			isa = PBXGroup;
 			children = (
+				96FB2F7F2AB77879000F8ABE /* Service */,
 				D862E9592AB5B51F00438768 /* Model */,
 				96B513092AB43F27004D9FD1 /* Util */,
 				6308B4BF2AB41BEB00CFEA4D /* ViewModel */,
@@ -273,6 +280,16 @@
 			path = Register;
 			sourceTree = "<group>";
 		};
+		96FB2F7F2AB77879000F8ABE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				96FB2F802AB77883000F8ABE /* FirebaseService.swift */,
+				96FB2F822AB77893000F8ABE /* Util.swift */,
+				96FB2F842AB7789A000F8ABE /* API.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		D862E9592AB5B51F00438768 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -389,6 +406,7 @@
 				96B513082AB43945004D9FD1 /* EditTextEditor.swift in Sources */,
 				96B5130B2AB43F35004D9FD1 /* KeyBoardHelper.swift in Sources */,
 				96B512FE2AB4240C004D9FD1 /* PostEditView.swift in Sources */,
+				96FB2F812AB77883000F8ABE /* FirebaseService.swift in Sources */,
 				1D907E382AB6AE880040B9D9 /* UserAuth.swift in Sources */,
 				96B513052AB43485004D9FD1 /* MyTextField.swift in Sources */,
 				D862E95D2AB5B55000438768 /* PostViewModel.swift in Sources */,
@@ -398,6 +416,7 @@
 				1D99A4CA2AB55B4C00F41F4F /* WelcomeView.swift in Sources */,
 				D862E95B2AB5B53F00438768 /* Post.swift in Sources */,
 				63BFA6382AB42CE6006BAF33 /* ChattingView.swift in Sources */,
+				96FB2F832AB77893000F8ABE /* Util.swift in Sources */,
 				D862E95F2AB5B59A00438768 /* PostDetailView.swift in Sources */,
 				63BFA63A2AB43CA2006BAF33 /* ChattingBubbleView.swift in Sources */,
 				6308B4BD2AB41B8F00CFEA4D /* MainPostView.swift in Sources */,
@@ -408,6 +427,7 @@
 				3B1599BB2AB425D0000A6410 /* ChatBubble.swift in Sources */,
 				2FA10F0A2AB42CD900E117B4 /* PostCell.swift in Sources */,
 				D862E9612AB5B5A500438768 /* PostDetailContentView.swift in Sources */,
+				96FB2F852AB7789A000F8ABE /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,7 +552,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BuyLikeLion/Preview Content\"";
-				DEVELOPMENT_TEAM = 6R3M7VGRP2;
+				DEVELOPMENT_TEAM = 2JZ8QNS5D4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -570,7 +590,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BuyLikeLion/Preview Content\"";
-				DEVELOPMENT_TEAM = 6R3M7VGRP2;
+				DEVELOPMENT_TEAM = 2JZ8QNS5D4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
