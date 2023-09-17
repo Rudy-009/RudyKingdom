@@ -13,8 +13,8 @@ struct ChattingView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    @ObservedObject var temp: TempChatbubbleStore = TempChatbubbleStore()
-
+    @StateObject var temp: TempChatbubbleStore = TempChatbubbleStore()
+    
     var body: some View {
         VStack {
             HStack {
@@ -37,8 +37,7 @@ struct ChattingView: View {
             .padding(.leading)
             .padding(.trailing)
             HStack {
-                Group{
-                    // MARK: 게시물 1번 사진
+                Group{ // MARK: 게시물 1번 사진
                     AsyncImage( url: URL(string :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREfiutHaA2w55P0u2VqE6Qt1YE_uJ6irBZbA&usqp=CAU")){ image in
                         image
                             .resizable()
@@ -60,25 +59,29 @@ struct ChattingView: View {
                 Spacer()
             }
             .background(Color(.lightGray))
-            ScrollView {
-                ForEach(temp.chats) { chat in
-                    HStack {
-                        if chat.sender == "Me" {
-                            Spacer()
+            ScrollView { // MARK: 채팅스크롤 뷰
+                ScrollViewReader { value in
+                    ForEach(temp.chats) { chat in
+                        HStack {
+                            if chat.sender == "Me" { //현재 계정과 비교해야 함
+                                Spacer()
+                            }
+                            ChattingBubbleView(isCurrentUser: chat.sender == "Me", chat: chat)
+                                .padding(.leading, 15)
+                                .padding(.trailing, 15)
+                            if chat.sender != "Me" { //현재 계정과 비교해야 함
+                                Spacer()
+                            }
                         }
-                        ChattingBubbleView(isCurrentUser: chat.sender == "Me", chat: chat)
-                            .padding(.leading, 15)
-                            .padding(.trailing, 15)
-                        if chat.sender != "Me" {
-                            Spacer()
-                        }
-                        
+                    }
+                    .onChange(of: temp.chats) { _ in
+                        value.scrollTo(temp.chats.count - 1)
                     }
                 }
-                .listStyle(.plain)
-            }
+            }.listStyle(.plain)
+            
             HStack{
-                // MARK: +
+                // MARK: 더하기 버튼
                 Button {
                     
                 } label: {
@@ -89,14 +92,15 @@ struct ChattingView: View {
                         .tint(.black)
                         .padding(.leading, 10)
                 }
-                // MARK: TextField
+                // MARK: 텍스트 필드
                 TextField("Type Something", text: $typingText)
                     .font(.title3)
                     .border(.black)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                // MARK: 보내기
+                // MARK: 메세지 보내기 버튼
                 Button {
-                    temp.addChatBubble(content: typingText)
+                    temp.addChatBubble(content: typingText) //매개변수로 본인 계정을 알려주기
+                    temp.fetchChatting()
                     //보내는 버튼을 누르면 알아서 내용 지우기
                     typingText = ""
                 } label: {
@@ -112,6 +116,9 @@ struct ChattingView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
+        .onAppear{
+            temp.fetchChatting()
+        }
     }
 }
 

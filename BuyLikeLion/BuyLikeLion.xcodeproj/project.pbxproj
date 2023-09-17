@@ -25,6 +25,7 @@
 		6308B4B92AB41B0100CFEA4D /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6308B4B82AB41B0100CFEA4D /* MyPageView.swift */; };
 		6308B4BB2AB41B1900CFEA4D /* ChattingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6308B4BA2AB41B1900CFEA4D /* ChattingListView.swift */; };
 		6308B4BD2AB41B8F00CFEA4D /* MainPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6308B4BC2AB41B8F00CFEA4D /* MainPostView.swift */; };
+		632FB5EC2AB773F6000046D0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 632FB5EB2AB773F6000046D0 /* GoogleService-Info.plist */; };
 		63BFA6382AB42CE6006BAF33 /* ChattingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BFA6372AB42CE6006BAF33 /* ChattingView.swift */; };
 		63BFA63A2AB43CA2006BAF33 /* ChattingBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BFA6392AB43CA2006BAF33 /* ChattingBubbleView.swift */; };
 		63BFA63C2AB43E22006BAF33 /* TempChatbubbleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BFA63B2AB43E22006BAF33 /* TempChatbubbleStore.swift */; };
@@ -36,7 +37,6 @@
 		B0C9B9BF2AB425990044DAA5 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C9B9BE2AB425990044DAA5 /* RegisterView.swift */; };
 		B0C9B9C52AB42F530044DAA5 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C9B9C42AB42F530044DAA5 /* CustomButton.swift */; };
 		B0C9B9C72AB431BB0044DAA5 /* CustomNavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C9B9C62AB431BB0044DAA5 /* CustomNavigationBackButton.swift */; };
-		B0C9B9CD2AB453FD0044DAA5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0C9B9CC2AB453FD0044DAA5 /* GoogleService-Info.plist */; };
 		B0C9B9CF2AB4552D0044DAA5 /* CustomTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C9B9CE2AB4552D0044DAA5 /* CustomTextStyle.swift */; };
 		DC4DBF0F2AB42BF600311F55 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DBF0E2AB42BF600311F55 /* SearchView.swift */; };
 		DC4DBF112AB4300300311F55 /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DBF102AB4300300311F55 /* SearchResultView.swift */; };
@@ -57,6 +57,7 @@
 		6308B4B82AB41B0100CFEA4D /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		6308B4BA2AB41B1900CFEA4D /* ChattingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingListView.swift; sourceTree = "<group>"; };
 		6308B4BC2AB41B8F00CFEA4D /* MainPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPostView.swift; sourceTree = "<group>"; };
+		632FB5EB2AB773F6000046D0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		63BFA6372AB42CE6006BAF33 /* ChattingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingView.swift; sourceTree = "<group>"; };
 		63BFA6392AB43CA2006BAF33 /* ChattingBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingBubbleView.swift; sourceTree = "<group>"; };
 		63BFA63B2AB43E22006BAF33 /* TempChatbubbleStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempChatbubbleStore.swift; sourceTree = "<group>"; };
@@ -68,7 +69,6 @@
 		B0C9B9BE2AB425990044DAA5 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		B0C9B9C42AB42F530044DAA5 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		B0C9B9C62AB431BB0044DAA5 /* CustomNavigationBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBackButton.swift; sourceTree = "<group>"; };
-		B0C9B9CC2AB453FD0044DAA5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B0C9B9CE2AB4552D0044DAA5 /* CustomTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextStyle.swift; sourceTree = "<group>"; };
 		DC4DBF0E2AB42BF600311F55 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		DC4DBF102AB4300300311F55 /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 		6308B48A2AB4189E00CFEA4D = {
 			isa = PBXGroup;
 			children = (
-				B0C9B9CC2AB453FD0044DAA5 /* GoogleService-Info.plist */,
+				632FB5EB2AB773F6000046D0 /* GoogleService-Info.plist */,
 				6308B4952AB4189E00CFEA4D /* BuyLikeLion */,
 				6308B4942AB4189E00CFEA4D /* Products */,
 			);
@@ -330,7 +330,7 @@
 			files = (
 				6308B49F2AB4189F00CFEA4D /* Preview Assets.xcassets in Resources */,
 				6308B49B2AB4189F00CFEA4D /* Assets.xcassets in Resources */,
-				B0C9B9CD2AB453FD0044DAA5 /* GoogleService-Info.plist in Resources */,
+				632FB5EC2AB773F6000046D0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
