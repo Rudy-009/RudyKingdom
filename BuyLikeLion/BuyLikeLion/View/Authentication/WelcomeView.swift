@@ -84,13 +84,9 @@ struct WelcomeButton: View {
     }
 }
 
-// 프리뷰 설정
+
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
         WelcomeView()
     }
 }
-
-
-
-
