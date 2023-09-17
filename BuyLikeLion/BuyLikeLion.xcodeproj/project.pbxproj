@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D907E382AB6AE880040B9D9 /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D907E372AB6AE880040B9D9 /* UserAuth.swift */; };
+		1D907E3A2AB6B80D0040B9D9 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D907E392AB6B80D0040B9D9 /* ToastView.swift */; };
 		1D99A4CA2AB55B4C00F41F4F /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D99A4C92AB55B4C00F41F4F /* WelcomeView.swift */; };
 		1D99A4CD2AB55B6200F41F4F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D99A4CC2AB55B6200F41F4F /* LoginView.swift */; };
 		2FA10F0A2AB42CD900E117B4 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA10F092AB42CD900E117B4 /* PostCell.swift */; };
@@ -47,6 +49,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D907E372AB6AE880040B9D9 /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
+		1D907E392AB6B80D0040B9D9 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		1D99A4C92AB55B4C00F41F4F /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		1D99A4CC2AB55B6200F41F4F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2FA10F092AB42CD900E117B4 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 			children = (
 				1D99A4C92AB55B4C00F41F4F /* WelcomeView.swift */,
 				1D99A4CC2AB55B6200F41F4F /* LoginView.swift */,
+				1D907E392AB6B80D0040B9D9 /* ToastView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 		6308B4BE2AB41BE300CFEA4D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1D907E372AB6AE880040B9D9 /* UserAuth.swift */,
 				6308B4962AB4189E00CFEA4D /* BuyLikeLionApp.swift */,
 				6308B4982AB4189E00CFEA4D /* MainTabView.swift */,
 				1D99A4C82AB55B2D00F41F4F /* Authentication */,
@@ -372,6 +378,7 @@
 				96B5130B2AB43F35004D9FD1 /* KeyBoardHelper.swift in Sources */,
 				6308B4972AB4189E00CFEA4D /* BuyLikeLionApp.swift in Sources */,
 				96B512FE2AB4240C004D9FD1 /* PostEditView.swift in Sources */,
+				1D907E382AB6AE880040B9D9 /* UserAuth.swift in Sources */,
 				96B513052AB43485004D9FD1 /* MyTextField.swift in Sources */,
 				96B513022AB42F22004D9FD1 /* ImageAddView.swift in Sources */,
 				6308B4BB2AB41B1900CFEA4D /* ChattingListView.swift in Sources */,
@@ -386,6 +393,7 @@
 				63BFA63A2AB43CA2006BAF33 /* ChattingBubbleView.swift in Sources */,
 				6308B4BB2AB41B1900CFEA4D /* ChattingListView.swift in Sources */,
 				6308B4BD2AB41B8F00CFEA4D /* MainPostView.swift in Sources */,
+				1D907E3A2AB6B80D0040B9D9 /* ToastView.swift in Sources */,
 				DC4DBF0F2AB42BF600311F55 /* SearchView.swift in Sources */,
 				6308B4B92AB41B0100CFEA4D /* MyPageView.swift in Sources */,
 				1D99A4CD2AB55B6200F41F4F /* LoginView.swift in Sources */,

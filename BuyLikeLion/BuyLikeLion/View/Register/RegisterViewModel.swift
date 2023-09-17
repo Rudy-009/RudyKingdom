@@ -10,40 +10,52 @@ import Firebase
 import FirebaseAuth
 
 class RegisterViewModel: ObservableObject {
+    @Published var signUpStatus: Int? = nil  // 1: 성공, -1: 실패
+    @Published var isEmailAvailable: Bool = true  // 이메일 중복 확인
 
-//    func emailAuthSignUp(email: String, userName: String, password: String) -> Int? {
-//
-//        Auth.auth().createUser(withEmail: email, password: password) { result, error in
-//            if let error = error {
-//                print("error: \(error.localizedDescription)")
-//
-//                return
-//            }
-//
-//            if result != nil {
-//                let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-//                changeRequest?.displayName = userName
-//                print("사용자 이메일: \(String(describing: result?.user.email))")
-//            }
-//        }
-//    }
-    func emailAuthSignUp(email: String, userName: String, password: String) -> Int? {
-        
-        var returnValue: Int? = nil
-
+    private let db = Firestore.firestore()
+    
+    func emailAuthSignUp(email: String, userName: String, password: String) {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if let error = error {
-                print("error: \(error.localizedDescription)")
-                returnValue = -1
+                self.signUpStatus = -1
+                return
             }
             
-            if result != nil {
-                let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-                changeRequest?.displayName = userName
-                print("사용자 이메일: \(String(describing: result?.user.email))")
+            if let user = result?.user {
+                let changeRequest = user.createProfileChangeRequest()
+                changeRequest.displayName = userName
+                changeRequest.commitChanges { error in
+                    if let error = error {
+                        self.signUpStatus = -1
+                        return
+                    }
+                }
+                
+                // 유저 정보를 Firestore에 저장
+                self.db.collection("users").document(user.uid).setData([
+                    "userName": userName,
+                    "email": email
+                ]) { error in
+                    if let error = error {
+                        self.signUpStatus = -1
+                        return
+                    }
+                    self.signUpStatus = 1
+                }
             }
         }
-        
-        return returnValue
+    }
+    
+    // 이메일 중복 확인
+    func checkEmailAvailability(email: String) {
+        db.collection("users").whereField("email", isEqualTo: email).getDocuments { querySnapshot, error in
+            if let error = error {
+                print("error: \(error.localizedDescription)")
+                return
+            }
+            
+            self.isEmailAvailable = querySnapshot?.documents.isEmpty ?? true
+        }
     }
 }
