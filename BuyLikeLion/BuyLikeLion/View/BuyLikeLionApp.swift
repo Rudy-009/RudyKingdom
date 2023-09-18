@@ -27,7 +27,6 @@ struct BuyLikeLionApp: App {
 
     var body: some Scene {
         WindowGroup {
-          
             if userAuth.isLogged {
                 MainTabView()
                     .environmentObject(userAuth)

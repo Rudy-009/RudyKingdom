@@ -24,6 +24,6 @@ struct ChattingBubbleView: View {
 
 struct ChattingBubbleView_Previews: PreviewProvider {
     static var previews: some View {
-        ChattingBubbleView(isCurrentUser: true, chat: ChatBubble(sender: "", content: "팔렸나요?", time: "4:19"))
+        ChattingBubbleView(isCurrentUser: true, chat: ChatBubble(sender: "", content: "팔렸나요?", time: "0.0"))
     }
 }

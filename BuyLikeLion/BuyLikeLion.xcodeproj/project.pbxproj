@@ -44,6 +44,9 @@
 		96FB2F852AB7789A000F8ABE /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB2F842AB7789A000F8ABE /* API.swift */; };
 		B090087C2AB5287800A8DB01 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B090087B2AB5287800A8DB01 /* GoogleService-Info.plist */; };
 		B090087E2AB542E000A8DB01 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B090087D2AB542E000A8DB01 /* RegisterViewModel.swift */; };
+		B0C9B9BF2AB425990044DAA5 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C9B9BE2AB425990044DAA5 /* RegisterView.swift */; };
+		B0C9B9C52AB42F530044DAA5 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C9B9C42AB42F530044DAA5 /* CustomButton.swift */; };
+		B0C9B9C72AB431BB0044DAA5 /* CustomNavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C9B9C62AB431BB0044DAA5 /* CustomNavigationBackButton.swift */; };
 		B0C9B9CF2AB4552D0044DAA5 /* CustomTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C9B9CE2AB4552D0044DAA5 /* CustomTextStyle.swift */; };
 		D862E95B2AB5B53F00438768 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D862E95A2AB5B53F00438768 /* Post.swift */; };
 		D862E95D2AB5B55000438768 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D862E95C2AB5B55000438768 /* PostViewModel.swift */; };
@@ -401,6 +404,7 @@
 				6308B49F2AB4189F00CFEA4D /* Preview Assets.xcassets in Resources */,
 				6308B49B2AB4189F00CFEA4D /* Assets.xcassets in Resources */,
 				B090087C2AB5287800A8DB01 /* GoogleService-Info.plist in Resources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
