@@ -14,6 +14,10 @@
 		2FA10F0A2AB42CD900E117B4 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA10F092AB42CD900E117B4 /* PostCell.swift */; };
 		3B1599B92AB42559000A6410 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1599B82AB42559000A6410 /* ChatRoom.swift */; };
 		3B1599BB2AB425D0000A6410 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1599BA2AB425D0000A6410 /* ChatBubble.swift */; };
+		51245FB52AB6DEAD001379B0 /* TradingHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51245FB42AB6DEAD001379B0 /* TradingHistoryView.swift */; };
+		516028C92AB7155300982F4B /* MyPageBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516028C82AB7155300982F4B /* MyPageBookModel.swift */; };
+		516028CB2AB7156E00982F4B /* MyPageBookStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516028CA2AB7156E00982F4B /* MyPageBookStore.swift */; };
+		6308B4972AB4189E00CFEA4D /* BuyLikeLionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6308B4962AB4189E00CFEA4D /* BuyLikeLionApp.swift */; };
 		6308B4992AB4189E00CFEA4D /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6308B4982AB4189E00CFEA4D /* MainTabView.swift */; };
 		6308B49B2AB4189F00CFEA4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6308B49A2AB4189F00CFEA4D /* Assets.xcassets */; };
 		6308B49F2AB4189F00CFEA4D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6308B49E2AB4189F00CFEA4D /* Preview Assets.xcassets */; };
@@ -64,6 +68,9 @@
 		3B1599B82AB42559000A6410 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatRoom.swift; path = BuyLikeLion/Model/ChatRoom.swift; sourceTree = SOURCE_ROOT; };
 		3B1599BA2AB425D0000A6410 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatBubble.swift; path = BuyLikeLion/Model/ChatBubble.swift; sourceTree = SOURCE_ROOT; };
 		3B64B1BC2AB434E4007B24E3 /* ChatData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ChatData.json; sourceTree = "<group>"; };
+		51245FB42AB6DEAD001379B0 /* TradingHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingHistoryView.swift; sourceTree = "<group>"; };
+		516028C82AB7155300982F4B /* MyPageBookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageBookModel.swift; sourceTree = "<group>"; };
+		516028CA2AB7156E00982F4B /* MyPageBookStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageBookStore.swift; sourceTree = "<group>"; };
 		6308B4932AB4189E00CFEA4D /* BuyLikeLion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuyLikeLion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6308B4962AB4189E00CFEA4D /* BuyLikeLionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyLikeLionApp.swift; sourceTree = "<group>"; };
 		6308B4982AB4189E00CFEA4D /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -132,6 +139,14 @@
 			isa = PBXGroup;
 			children = (
 				2FA10F092AB42CD900E117B4 /* PostCell.swift */,
+			);
+			path = SubView;
+			sourceTree = "<group>";
+		};
+		51245FB32AB6DD51001379B0 /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				51245FB42AB6DEAD001379B0 /* TradingHistoryView.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -208,6 +223,9 @@
 			isa = PBXGroup;
 			children = (
 				6308B4B82AB41B0100CFEA4D /* MyPageView.swift */,
+				51245FB32AB6DD51001379B0 /* SubView */,
+				516028C82AB7155300982F4B /* MyPageBookModel.swift */,
+				516028CA2AB7156E00982F4B /* MyPageBookStore.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -401,8 +419,12 @@
 				3B1599B92AB42559000A6410 /* ChatRoom.swift in Sources */,
 				6308B4992AB4189E00CFEA4D /* MainTabView.swift in Sources */,
 				DC4DBF112AB4300300311F55 /* SearchResultView.swift in Sources */,
+				516028C92AB7155300982F4B /* MyPageBookModel.swift in Sources */,
 				DC4DBF132AB443D100311F55 /* SearchViewModel.swift in Sources */,
 				63BFA63C2AB43E22006BAF33 /* TempChatbubbleStore.swift in Sources */,
+				6308B4972AB4189E00CFEA4D /* BuyLikeLionApp.swift in Sources */,
+				516028CB2AB7156E00982F4B /* MyPageBookStore.swift in Sources */,
+				51245FB52AB6DEAD001379B0 /* TradingHistoryView.swift in Sources */,
 				96B513082AB43945004D9FD1 /* EditTextEditor.swift in Sources */,
 				96B5130B2AB43F35004D9FD1 /* KeyBoardHelper.swift in Sources */,
 				96B512FE2AB4240C004D9FD1 /* PostEditView.swift in Sources */,
