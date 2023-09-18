@@ -8,7 +8,6 @@
 import SwiftUI
 import FirebaseCore
 
-
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
@@ -21,13 +20,25 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct BuyLikeLionApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    
-    
     @StateObject private var keyboardHeight = KeyboardHeightHelper()
+    @StateObject private var searchViewModel: SearchViewModel = SearchViewModel()
+    @StateObject var registerViewModel: RegisterViewModel = RegisterViewModel()
+    @StateObject var userAuth = UserAuth()
+
     var body: some Scene {
         WindowGroup {
-            ChattingView()
-                .environmentObject(keyboardHeight)
+            if userAuth.isLogged {
+                MainTabView()
+                    .environmentObject(userAuth)
+                    .environmentObject(keyboardHeight)
+                    .environmentObject(searchViewModel)
+                    .environmentObject(registerViewModel)
+            } else {
+                WelcomeView()
+                    .environmentObject(userAuth)
+                    .environmentObject(registerViewModel)
+            }
         }
     }
 }
+

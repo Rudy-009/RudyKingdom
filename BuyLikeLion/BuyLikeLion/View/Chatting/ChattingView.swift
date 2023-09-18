@@ -37,7 +37,7 @@ struct ChattingView: View {
             .padding(.leading)
             .padding(.trailing)
             HStack {
-                Group{ // MARK: 게시물 1번 사진
+                Group{
                     AsyncImage( url: URL(string :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREfiutHaA2w55P0u2VqE6Qt1YE_uJ6irBZbA&usqp=CAU")){ image in
                         image
                             .resizable()
@@ -59,29 +59,7 @@ struct ChattingView: View {
                 Spacer()
             }
             .background(Color(.lightGray))
-            ScrollView { // MARK: 채팅스크롤 뷰
-                ScrollViewReader { value in
-                    ForEach(temp.chats) { chat in
-                        HStack {
-                            if chat.sender == "Me" { //현재 계정과 비교해야 함
-                                Spacer()
-                            }
-                            ChattingBubbleView(isCurrentUser: chat.sender == "Me", chat: chat)
-                                .padding(.leading, 15)
-                                .padding(.trailing, 15)
-                            if chat.sender != "Me" { //현재 계정과 비교해야 함
-                                Spacer()
-                            }
-                        }
-                    }
-                    .onChange(of: temp.chats) { _ in
-                        value.scrollTo(temp.chats.count - 1)
-                    }
-                }
-            }.listStyle(.plain)
-            
             HStack{
-                // MARK: 더하기 버튼
                 Button {
                     
                 } label: {
@@ -97,7 +75,7 @@ struct ChattingView: View {
                     .font(.title3)
                     .border(.black)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                // MARK: 메세지 보내기 버튼
+                // MARK:
                 Button {
                     temp.addChatBubble(content: typingText) //매개변수로 본인 계정을 알려주기
                     temp.fetchChatting()

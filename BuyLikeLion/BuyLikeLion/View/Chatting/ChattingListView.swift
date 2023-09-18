@@ -16,7 +16,6 @@ struct ChattingListView: View {
                 ForEach(chatsampleData, id: \.id) { chatItem in
                     NavigationLink {
                         // MARK: 채팅뷰 주입 필요
-                        ChattingView()
                     } label: {
                         LabeledContent {
                             AsyncImage(url: URL(string: imagePath)) { Image in
